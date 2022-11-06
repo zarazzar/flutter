@@ -210,6 +210,7 @@ class AOTSnapshotter {
     genSnapshotArgs.addAll(<String>[
       // Faster async/await
       if (shouldSplitDebugInfo) ...<String>[
+        '--resolve-dwarf-paths',
         '--dwarf-stack-traces',
         '--save-debugging-info=${_fileSystem.path.join(splitDebugInfo!, debugFilename)}',
       ],
